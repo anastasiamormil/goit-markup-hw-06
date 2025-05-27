@@ -10,6 +10,9 @@ ul {
   margin: 0;
   padding-left: 0;
 }
+button {
+  cursor: pointer;
+}
 
 /*Global / Base Styles  */
 
@@ -35,13 +38,32 @@ p {
 
 /* MOBILE FIRST */
 
-/* Mobile header */
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
+  /* Layout Structure */
+
+  .section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .container {
+    width: 100%;
+    max-width: 767px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  /* MOBILE HEADER */
+
   .page-header {
     border-bottom: 1px solid #e7e9fc;
     box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
       0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
-    position: relative;
+  }
+  .page-nav {
+    padding: 16px;
+    display: flex;
+
+    justify-content: space-between;
   }
   .logo {
     font-family: "Raleway", sans-serif;
@@ -56,107 +78,112 @@ p {
   .page-span {
     color: #4d5ae5;
   }
-  .page-header-menu-wrapper {
+  .page-nav-first::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    border-radius: 2px;
+    width: 48px;
+    height: 4px;
+    background-color: #404bbf;
+  }
+
+  .page-header-menu {
+    display: none;
+  }
+  .contacts {
+    display: none;
+  }
+  .header-icon {
+  }
+
+  /* MOBILE-MENU-OVERLAY */
+
+  .mobile-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 3;
-    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    background-color: rgba(46, 47, 66, 0.4);
+
     overflow-y: hidden;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .page-header-menu {
+  .mobile-menu-is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu-modal {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+      0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    background: #fcfcfc;
+    border-radius: 4px;
+    max-width: 100%;
+    height: 100%;
+
+    opacity: 1;
+    pointer-events: auto;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 72px 24px 40px 16px;
+  }
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: #e7e9fc;
     position: absolute;
-    top: 72px;
-    left: 16px;
-    gap: 40px;
+    top: 24px;
+    right: 24px;
+  }
+
+  .mobile-menu a {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+  }
+  .mobile-menu {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
-  }
-  .page-nav-first {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
+    margin-bottom: 168px;
   }
 
-  .page-header-menu li:first-child .page-nav-first {
-    color: #4d5ae5;
-  }
-  .page-nav-first {
-    color: #2e2f2e;
-  }
-  .page-nav-first:hover,
-  .page-nav-first:focus {
+  .mobile-menu li:first-child a {
     color: #404bbf;
   }
-  .nav-address {
-  }
-
-  .contacts {
-    color: #434455;
-    gap: 40px;
+  .mobile-contacts a {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    position: absolute;
+    color: #434455;
+    font-style: normal;
+  }
+  .mobile-contacts li:first-child a {
+    color: #4d5ae5;
+  }
 
-    z-index: 700;
+  .mobile-contacts {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    font-style: normal;
-    left: 16px;
-    bottom: 128px;
   }
-  .contacts li:first-child a {
-    color: #4d5ae5;
-  }
-  .contacts a {
-    color: #434455;
-  }
-  /* Mobile menu */
 
-  .header-burger {
-    position: relative;
-    top: 16px;
-    width: 18px;
-    height: 16px;
-    z-index: 700;
-  }
-  .header-burger:before,
-  .header-burger:after {
-    content: "";
-    background-color: #2f2f37;
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-  }
-  .header-burger:before {
-    top: 0;
-  }
-  .header-burger:after {
-    bottom: 0;
-  }
-  .header-burger span {
-    position: absolute;
-    background-color: #2e2f2e;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    top: 6px;
-  }
   .mobile-icon-list {
     position: absolute;
     display: flex;
@@ -168,12 +195,10 @@ p {
     width: 40px;
     height: 40px;
   }
-
   .mobile-icon-link:hover,
   .mobile-icon-link:focus {
     background-color: #31d0aa;
   }
-
   .mobile-icon-link {
     background-color: #4d5ae5;
     width: 100%;
@@ -185,19 +210,6 @@ p {
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  /* Layout Structure */
-
-  .section {
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
-
-  .container {
-    width: 100%;
-    max-width: 767px;
-    padding: 0 16px;
-    margin: 0 auto;
   }
 
   /*  MOBILE Main section */
@@ -867,6 +879,7 @@ p {
     visibility: visible;
   }
 }
+
 /* DESKTOP DESIGN */
 
 @media (min-width: 1158px) {
@@ -943,9 +956,7 @@ p {
   .mobile-icon-list {
     display: none;
   }
-  .page-header-menu-wrapper {
-    display: flex;
-  }
+
   .page-header {
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
       0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -1624,9 +1635,28 @@ p {
 /* TABLET VERSION */
 
 @media screen and (min-width: 768px) {
+  .header-icon {
+    display: none;
+  }
+
+  .logo {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    margin-right: 76px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: #2e2f42;
+  }
+  .page-span {
+    color: #4d5ae5;
+  }
+
   .contacts {
     color: #434455;
     display: flex;
+    flex-direction: column;
     gap: 12px;
     font-size: 12px;
     line-height: 1.17;
@@ -1966,16 +1996,6 @@ p {
     font-style: normal;
   }
 
-  .contacts {
-    color: #434455;
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    letter-spacing: 0.02em;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 24px 0;
-  }
   .contacts a {
     color: #434455;
   }
@@ -2340,7 +2360,7 @@ p {
     flex-wrap: wrap;
     gap: 24px;
     row-gap: 72px;
-    column-gap: 24px~;
+    column-gap: 24px;
     justify-content: flex-start;
     padding: 0;
     margin: 0 auto;
