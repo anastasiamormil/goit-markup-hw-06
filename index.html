@@ -24,9 +24,9 @@
             <use href="./images/icons.svg#icon-burger"></use>
           </svg>
           <ul class="page-header-menu">
-            <li><a class="page-nav-first active-menu" href="#">Studio</a></li>
-            <li><a class="page-nav-first" href="#">Portfolio</a></li>
-            <li><a class="page-nav-first" href="#">Contacts</a></li>
+            <li><a href="#">Studio</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contacts</a></li>
           </ul>
         </nav>
         <address class="nav-address">
@@ -295,10 +295,12 @@
             <li class="portfolio-image-box">
               <div class="image-box">
                 <img
+                  srcset="
+                    ./images/img-4-mobile.jpg 1x,
+                    ./images/img-4-tablet.jpg 2x
+                  "
                   src="images/img-4.png"
                   alt="Banking App"
-                  width="360"
-                  height="300"
                 />
 
                 <p class="overlay-paragraph">
@@ -315,10 +317,12 @@
             <li class="portfolio-image-box">
               <div class="image-box">
                 <img
+                  srcset="
+                    ./images/img-5-mobile.jpg 1x,
+                    ./images/img-5-tablet.jpg 2x
+                  "
                   src="images/img-5.jpg"
                   alt="Cashless Payment"
-                  width="360"
-                  height="300"
                 />
 
                 <p class="overlay-paragraph">
@@ -335,10 +339,12 @@
             <li class="portfolio-image-box">
               <div class="image-box">
                 <img
+                  srcset="
+                    ./images/img-6-mobile.jpg 1x,
+                    ./images/img-6-tablet.jpg 2x
+                  "
                   src="images/img-6.jpg"
                   alt="Meditation App"
-                  width="360"
-                  height="300"
                 />
 
                 <p class="overlay-paragraph">
@@ -355,10 +361,12 @@
             <li class="portfolio-image-box">
               <div class="image-box">
                 <img
+                  srcset="
+                    ./images/img-7-mobile.jpg 1x,
+                    ./images/img-7-tablet.jpg 2x
+                  "
                   src="images/img-7.jpg"
                   alt="Taxi Service"
-                  width="360"
-                  height="300"
                 />
 
                 <p class="overlay-paragraph">
@@ -375,10 +383,12 @@
             <li class="portfolio-image-box">
               <div class="image-box">
                 <img
+                  srcset="
+                    ./images/img-8-mobile.jpg 1x,
+                    ./images/img-8-tablet.jpg 2x
+                  "
                   src="images/img-8.jpg"
                   alt="Screen Illustrations"
-                  width="360"
-                  height="300"
                 />
 
                 <p class="overlay-paragraph">
@@ -395,10 +405,12 @@
             <li class="portfolio-image-box">
               <div class="image-box">
                 <img
+                  srcset="
+                    ./images/img-9-mobile.jpg 1x,
+                    ./images/img-9-tablet.jpg 2x
+                  "
                   src="images/img-9.jpg"
                   alt="Online Courses"
-                  width="360"
-                  height="300"
                 />
 
                 <p class="overlay-paragraph">
@@ -418,48 +430,49 @@
     </main>
     <footer class="section page-footer">
       <div class="container page-footer-container">
-        <div class="footer-caption">
-          <a class="footer-logo" href=""
-            ><span class="page-footer-span">Web</span>Studio</a
-          >
-          <p class="footer-paragraph">
-            Increase the flow of customers and sales for your business with
-            digital marketing & growth solutions.
-          </p>
-        </div>
-
-        <div class="footer-icon-container">
-          <p class="footer-icon-paragraph">Social media</p>
-          <ul class="footer-icon-list">
-            <li class="footer-icon">
-              <a class="footer-icon-link" href="#">
-                <svg class="footer-icon-body" width="24" height="24">
-                  <use href="./images/icons.svg#icon-instagram-2"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-icon">
-              <a class="footer-icon-link" href="#">
-                <svg class="footer-icon-body" width="24" height="24">
-                  <use href="./images/icons.svg#icon-twitter-1"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-icon">
-              <a class="footer-icon-link" href="#">
-                <svg class="footer-icon-body" width="24" height="24">
-                  <use href="./images/icons.svg#icon-facebook-1"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-icon">
-              <a class="footer-icon-link" href="#">
-                <svg class="footer-icon-body" width="24" height="24">
-                  <use href="./images/icons.svg#icon-linkedin-1"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+        <div class="footer-wrapper">
+          <div class="footer-caption">
+            <a class="footer-logo" href=""
+              ><span class="page-footer-span">Web</span>Studio</a
+            >
+            <p class="footer-paragraph">
+              Increase the flow of customers and sales for your business with
+              digital marketing & growth solutions.
+            </p>
+          </div>
+          <div class="footer-icon-container">
+            <p class="footer-icon-paragraph">Social media</p>
+            <ul class="footer-icon-list">
+              <li class="footer-icon">
+                <a class="footer-icon-link" href="#">
+                  <svg class="footer-icon-body" width="24" height="24">
+                    <use href="./images/icons.svg#icon-instagram-2"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-icon">
+                <a class="footer-icon-link" href="#">
+                  <svg class="footer-icon-body" width="24" height="24">
+                    <use href="./images/icons.svg#icon-twitter-1"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-icon">
+                <a class="footer-icon-link" href="#">
+                  <svg class="footer-icon-body" width="24" height="24">
+                    <use href="./images/icons.svg#icon-facebook-1"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-icon">
+                <a class="footer-icon-link" href="#">
+                  <svg class="footer-icon-body" width="24" height="24">
+                    <use href="./images/icons.svg#icon-linkedin-1"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="footer-subscribe-container">
           <p class="subscribe-paragraph">Subscribe</p>
@@ -568,7 +581,7 @@
       </div>
     </div>
 
-    <div class="mobile-menu-overlay mobile-menu-is-open">
+    <div class="mobile-menu-overlay">
       <div class="mobile-menu-modal">
         <button type="button" class="mobile-menu-btn">
           <svg width="8" height="8">
